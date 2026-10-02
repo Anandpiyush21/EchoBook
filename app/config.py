@@ -21,7 +21,8 @@ _load_dotenv()
 
 # "local"  -> full pipeline: upload, transcribe (faster-whisper), structure (Ollama).
 # "viewer" -> read-only recipe book; used for the public Render deployment.
-MODE = os.getenv("ECHOBOOK_MODE", "local").lower()
+# On Render (which sets RENDER=true) default to the safe read-only viewer if no mode was configured.
+MODE = os.getenv("ECHOBOOK_MODE", "viewer" if os.getenv("RENDER") else "local").lower()
 INFERENCE_ENABLED = MODE == "local"
 
 DATA_DIR = Path(os.getenv("ECHOBOOK_DATA_DIR", ROOT / "data"))
