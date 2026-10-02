@@ -1,0 +1,272 @@
+[
+ {
+  "id": "01-sunday-dal-ad4852",
+  "recipe": {
+   "title": "Sunday Dal",
+   "description": "A fragrant and flavorful dal made with yellow lentils and a flavorful tadka.",
+   "servings": "4 people",
+   "total_time": "",
+   "ingredients": [
+    {
+     "quantity": "1 cup",
+     "item": "toor dal (yellow lentils)",
+     "note": "washed 3-4 times until the water is clear"
+    },
+    {
+     "quantity": "3 cups",
+     "item": "water",
+     "note": ""
+    },
+    {
+     "quantity": "1 pinch",
+     "item": "turmeric",
+     "note": ""
+    },
+    {
+     "quantity": "to taste",
+     "item": "salt",
+     "note": ""
+    },
+    {
+     "quantity": "2 spoons",
+     "item": "ghee",
+     "note": "real ghee, not oil"
+    },
+    {
+     "quantity": "1 teaspoon",
+     "item": "cumin seeds",
+     "note": ""
+    },
+    {
+     "quantity": "2",
+     "item": "dried red chilies",
+     "note": ""
+    },
+    {
+     "quantity": "a big pinch",
+     "item": "asafoetida (hing)",
+     "note": ""
+    },
+    {
+     "quantity": "1",
+     "item": "onion",
+     "note": "chopped fine"
+    },
+    {
+     "quantity": "1",
+     "item": "tomato",
+     "note": ""
+    },
+    {
+     "quantity": "2",
+     "item": "garlic cloves",
+     "note": "crushed"
+    },
+    {
+     "quantity": "1/2",
+     "item": "lemon",
+     "note": "juice"
+    },
+    {
+     "quantity": "",
+     "item": "fresh coriander",
+     "note": "for garnish"
+    }
+   ],
+   "steps": [
+    "Wash the yellow lentils 3-4 times until the water is clear.",
+    "Pressure cook the lentils with 3 cups of water, 1 pinch of turmeric, and salt for 4 whistles.",
+    "Heat 2 spoons of ghee in a small pan.",
+    "Add 1 teaspoon of cumin seeds and let them splutter.",
+    "Add 2 dried red chilies and a big pinch of asafoetida.",
+    "Add 1 chopped onion and cook until golden.",
+    "Add 1 tomato and 2 crushed garlic cloves, cook until the tomato is soft and mushy.",
+    "Pour the tadka into the cooked dal and mix well.",
+    "Squeeze half a lemon and garnish with fresh coriander."
+   ],
+   "tips": [
+    "Follow the pressure cooking time strictly as your grandmother was very particular about it.",
+    "Use real ghee for the best flavor."
+   ],
+   "story_quote": "You know, we made this the day your father was born. The whole hostel floor could smell it.",
+   "tags": [
+    "dal",
+    "indian",
+    "lentil"
+   ]
+  },
+  "transcript": "Okay, is this thing recording? All right, so the dal. Your grandmother always made the dal on Sundays, and everybody asks me how so here it is. You take about one cup of the yellow lentils, the tor dal, and you wash it three, four times until the water is clear. Then into the pressure cooker with maybe three cups of water, a pinch of turmeric, and some salt, four whistles. Four, not three, she was very strict about that. Meanwhile, in a small pan, you heat two spoons of ghee. Real ghee, not that oil business. When it is hot, you put one teaspoon of cumin seeds, and they will splutter, then two dried red chilies, and a big pinch of hing pheosafitida. Then one onion chopped fine, and you let it go golden. Then one tomato, and two cloves of garlic crushed. Cook it till the tomato is soft and mushy. Then you pour this whole thing, the tadka into the dal, and mix. Squeeze half a lemon, fresh coriander on top. This is enough for four people, or for two if I'm eating. You know, we made this the day your father was born. The whole hostel floor could smell it. Any way, that is a dal.",
+  "audio_file": "01-sunday-dal-ad4852.wav",
+  "source_name": "01_sunday_dal.wav",
+  "duration": 63.4,
+  "asr_model": "faster-whisper small.en",
+  "llm_model": "ollama qwen2.5:7b-instruct",
+  "created_at": "2026-10-02T18:03:24+00:00"
+ },
+ {
+  "id": "02-banana-bread-d75750",
+  "recipe": {
+   "title": "Mrs. Fernandes' Banana Bread",
+   "description": "A warm and moist banana bread recipe passed down from a neighbor, perfect for the holidays.",
+   "servings": "1 loaf",
+   "total_time": "",
+   "ingredients": [
+    {
+     "quantity": "3",
+     "item": "bananas",
+     "note": "very ripe"
+    },
+    {
+     "quantity": "1/2 cup",
+     "item": "butter",
+     "note": "melted"
+    },
+    {
+     "quantity": "3/4 cup",
+     "item": "brown sugar",
+     "note": ""
+    },
+    {
+     "quantity": "1",
+     "item": "egg",
+     "note": "beaten"
+    },
+    {
+     "quantity": "1 tsp",
+     "item": "vanilla",
+     "note": ""
+    },
+    {
+     "quantity": "1 tsp",
+     "item": "baking soda",
+     "note": ""
+    },
+    {
+     "quantity": "a pinch",
+     "item": "salt",
+     "note": ""
+    },
+    {
+     "quantity": "1 1/2 cups",
+     "item": "plain flour",
+     "note": ""
+    },
+    {
+     "quantity": "a handful",
+     "item": "walnuts",
+     "note": "chopped, optional"
+    }
+   ],
+   "steps": [
+    "Mash 3 very ripe bananas in a big bowl",
+    "Melt 1/2 cup of butter and pour it in",
+    "Add 3/4 cup of brown sugar",
+    "Beat 1 egg and add it",
+    "Stir in 1 tsp of vanilla",
+    "Add 1 tsp of baking soda and a pinch of salt",
+    "Stir in 1 1/2 cups of plain flour, just until the flour disappears",
+    "If using, add a handful of chopped walnuts",
+    "Grease a loaf tin",
+    "Pour the batter in",
+    "Bake at 350 Fahrenheit (175 Celsius) for about an hour",
+    "Poke with a toothpick, if it comes out clean, it is done",
+    "Let it cool before cutting"
+   ],
+   "tips": [
+    "Do not over mix the batter, otherwise it gets tough like a brick"
+   ],
+   "story_quote": "Mrs. Fernandes used to bring it over every Christmas, wrapped in newspaper, still warm.",
+   "tags": [
+    "american",
+    "baking",
+    "christmas"
+   ]
+  },
+  "transcript": "Right, banana bread. This one I learned from Mrs. Fernandez next door back in, what, nineteen-seven to eight. She would never write anything down either. So, you want three bananas, very ripe, there are other black ones that nobody wants to eat. Mash them up with a fork in a big bowl. Then half a cup of butter melted a stick, pour that in. Three quarters of a cup of sugar. I use brown sugar. She used white. It does not matter much. One egg be eaten. A teaspoon of vanilla. Then you put in one teaspoon of baking soda and a pinch of salt, and then one and a half cups of flour, the plain flour. Do not over mix it, just until the flour disappears, otherwise it gets tough like a brick. Oh, and if you have walnuts, a handful of walnuts chopped. Grease a loaf tin, pour it in, and bake at 350 Fahrenheit, about 175 Celsius for about an hour. Poke it with a toothpick. If it comes out clean, it is done. Let it cool before you cut it. I know you won't, nobody does. Mix one loaf. Messes. Fernandez used to bring it over every Christmas wrapped in newspaper. Still worn.",
+  "audio_file": "02-banana-bread-d75750.wav",
+  "source_name": "02_banana_bread.wav",
+  "duration": 64.7,
+  "asr_model": "faster-whisper small.en",
+  "llm_model": "ollama qwen2.5:7b-instruct",
+  "created_at": "2026-10-02T18:06:17+00:00"
+ },
+ {
+  "id": "03-masala-chai-159660",
+  "recipe": {
+   "title": "Masala Chai",
+   "description": "A traditional Indian spiced tea, rich in history and served with a personal touch.",
+   "servings": "2 cups",
+   "total_time": "",
+   "ingredients": [
+    {
+     "quantity": "1 cup",
+     "item": "water",
+     "note": ""
+    },
+    {
+     "quantity": "1 cup",
+     "item": "milk",
+     "note": ""
+    },
+    {
+     "quantity": "4",
+     "item": "green cardamom pods",
+     "note": "crushed"
+    },
+    {
+     "quantity": "1 inch piece",
+     "item": "ginger",
+     "note": ""
+    },
+    {
+     "quantity": "2",
+     "item": "cloves",
+     "note": ""
+    },
+    {
+     "quantity": "2 tsp",
+     "item": "loose black tea",
+     "note": "the strong Assam kind"
+    },
+    {
+     "quantity": "2 tsp",
+     "item": "sugar",
+     "note": "or more"
+    },
+    {
+     "quantity": "a little",
+     "item": "cinnamon",
+     "note": "optional, if you like it"
+    }
+   ],
+   "steps": [
+    "Put 1 cup of water and 1 cup of milk in a saucepan",
+    "Crush 4 green cardamom pods, 1 inch piece of ginger, and 2 cloves in a mortar",
+    "Add the crushed spices to the water and milk",
+    "Bring the mixture to a boil",
+    "Add 2 teaspoons of loose black tea, the strong Assam kind",
+    "Add 2 teaspoons of sugar or more",
+    "Boil the mixture until it rises",
+    "Remove from heat, let it settle, and put it back on heat",
+    "Repeat the last three steps three times",
+    "Strain the chai into cups"
+   ],
+   "tips": [
+    "Do this three times for the best flavor"
+   ],
+   "story_quote": "I drank this every morning at the railway station for 40 years before work the chaiwala there at Ramu, he taught me the three times trick.",
+   "tags": [
+    "indian",
+    "spiced",
+    "tea"
+   ]
+  },
+  "transcript": "Ah, the chai. People think chai is just tea bags. No, no, no. Listen. For two cups, you put one cup of water and one cup of milk in a saucepan. Before it boils, you crush in the mortar, about four green cardamom pods, a small piece of ginger, about one inch, and two cloves. And a little cinnamon if you like it. I like it. Throw all that into the water and milk and let it come to a boil. Then two teaspoons of loose black tea, the strong asan kind. And two teaspoons of sugar or more. Your grandmother took three. Let it boil up, it will rise. And when it rises, you take it off the flame, let it settle, and put it back. Do this three times. This is the secret three times. Then strain it into the cups. I drank this every morning at the railway station for 40 years before work the chaiwala there at Ramu, he taught me the three times trick.",
+  "audio_file": "03-masala-chai-159660.wav",
+  "source_name": "03_masala_chai.wav",
+  "duration": 48.2,
+  "asr_model": "faster-whisper small.en",
+  "llm_model": "ollama qwen2.5:7b-instruct",
+  "created_at": "2026-10-02T18:08:38+00:00"
+ }
+]
