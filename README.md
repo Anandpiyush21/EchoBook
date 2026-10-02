@@ -10,6 +10,8 @@ the important part: his own words and the original recording, attached to every 
 All processing runs locally on open-weight models. No recording, transcript or family story is sent to a
 cloud API, and once the models are downloaded the pipeline works with no internet connection at all.
 
+![EchoBook demo](docs/demo.gif)
+
 ![The recipe book](docs/book.png)
 
 | A recipe, with Grandpa's own words and the original recording | The local pipeline, stage by stage |
