@@ -9,22 +9,32 @@ ingredient lists and no steps, and the recipes only exist in his voice, scattere
 EchoBook takes those recordings and turns them into a clean, searchable, printable recipe book. It keeps
 the important part: his own words and the original recording, attached to every recipe.
 
-All processing runs locally on open-weight models. No recording, transcript or family story is sent to a
-cloud API, and once the models are downloaded the pipeline works with no internet connection at all.
+Everything runs on open-weight models, and you choose where the LLM runs with one setting:
+
+- **Ollama (default, fully offline):** `qwen2.5` runs on your own machine. No recording, transcript or
+  family story leaves the house, and once the models are downloaded the pipeline works with no internet.
+- **Gemma 4 via the Gemini API:** Google's open-weight `gemma-4-26b-a4b-it` does the writing and powers
+  both agents, with no GPU needed. Speech-to-text still runs locally, so only the transcript is sent.
 
 ![EchoBook demo](docs/demo.gif)
 
 ![The recipe book](docs/book.png)
 
-| A recipe, with Grandpa's own words and the original recording | The local pipeline, stage by stage |
+| A recipe, with Grandpa's own words and the original recording | Add a memo: upload, record or try a sample |
 |---|---|
-| ![Recipe page](docs/recipe.png) | ![Pipeline progress](docs/pipeline.png) |
+| ![Recipe page](docs/recipe.png) | ![Add a memo](docs/add.png) |
 
 ## Features
 
-- **Drop in a voice memo** (mp3, m4a, wav, ogg, webm…) or pick a sample, and watch each stage run live:
-  saving → listening (speech-to-text, with a progress bar and live transcript) → writing the recipe →
-  adding it to the book.
+- **Drop in a voice memo** (mp3, m4a, wav, ogg, webm…), **record one with your mic** right in the browser,
+  or pick a sample, and watch each stage run live: saving → listening (speech-to-text, with a progress bar
+  and live transcript) → writing the recipe → fact-checking → adding it to the book.
+- **Two model backends**: local Ollama (`qwen2.5`) or Gemma 4 through the Gemini API, switched with
+  `LLM_PROVIDER`. The footer always shows which models produced the book.
+- **Fact-checker agent**: after the recipe is written, an agent checks every ingredient against the
+  transcript and fixes amounts the recording supports. Guardrails in code block anything it doesn't.
+- **"Ask the book"**: chat with the recipes ("make masala chai for 6 people", "why real ghee?"). A
+  tool-calling agent searches, scales and quotes the memos.
 - **Recipe cards**: title, servings, ingredient list with quantities exactly as spoken, numbered steps,
   and the storyteller's own tips.
 - **"In Grandpa's words"**: a verbatim quote of the personal story behind each dish (who taught it, when it
@@ -58,7 +68,8 @@ cloud API, and once the models are downloaded the pipeline works with no interne
    open-weight Whisper (`small.en` by default) on CTranslate2 with int8 on CPU or float16 on a GPU. VAD
    filtering skips silence, and an initial prompt biases it toward kitchen vocabulary (ghee, asafoetida,
    cardamom…). See `app/transcribe.py`.
-2. **Structuring: [Ollama](https://ollama.com) + `qwen2.5:7b-instruct`** (Apache-2.0, open weights). The
+2. **Structuring: [Ollama](https://ollama.com) + `qwen2.5:7b-instruct`** (Apache-2.0, open weights), or
+   **Gemma 4** (`gemma-4-26b-a4b-it`) through the Gemini API with `LLM_PROVIDER=gemma`. The
    transcript is sent to the local model with a carefully tuned archivist prompt, and Ollama's
    **structured outputs** constrain decoding to a JSON schema (title, servings, ingredients with
    quantity/item/note, steps, tips, story quote, tags), so the output always parses. The prompt forbids
@@ -104,6 +115,7 @@ point is that family recordings stay home. So the same codebase runs in two mode
 |---|---|---|
 | Upload & process memos | ✅ faster-whisper + Ollama | ❌ disabled (403) |
 | Browse, search, listen, export | ✅ | ✅ |
+| Ask the book (agent) | ✅ | ✅ when `LLM_PROVIDER=gemma` and `GEMINI_API_KEY` are set |
 | Dependencies | `requirements.txt` (includes faster-whisper) | `requirements-web.txt` (FastAPI only) |
 | Data | SQLite, mirrored to `data/recipes.json` | SQLite rebuilt from `data/recipes.json` at boot |
 
@@ -129,6 +141,10 @@ cp .env.example .env                 # optional: change models, storyteller name
 uvicorn app.main:app --port 8000
 # open http://localhost:8000  →  "Add a memo"  →  pick a sample  →  "Turn into recipe"
 ```
+
+**Using Gemma 4 instead of Ollama:** skip `ollama pull`, get a free key at
+https://aistudio.google.com/apikey, and set `LLM_PROVIDER=gemma` and `GEMINI_API_KEY=...` in `.env`.
+Structuring and both agents then run on `gemma-4-26b-a4b-it` (or `gemma-4-31b-it` via `GEMMA_MODEL`).
 
 The first transcription downloads the Whisper model (~500 MB) from Hugging Face. No token is needed.
 After that, set `HF_HUB_OFFLINE=1`, unplug the network, and the whole pipeline still works.
