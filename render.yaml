@@ -16,6 +16,6 @@ services:
       - key: PYTHON_VERSION
         value: 3.11.9
       - key: ECHOBOOK_STORYTELLER
-        value: Grandpa
+        value: Sharma Ji
       - key: ECHOBOOK_TITLE
-        value: Grandpa's Kitchen
+        value: Sharma Ji ki Rasoi

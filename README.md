@@ -20,7 +20,7 @@ Everything runs on open-weight models, and you choose where the LLM runs with on
 
 ![The recipe book](docs/book.png)
 
-| A recipe, with Grandpa's own words and the original recording | Add a memo: upload, record or try a sample |
+| A recipe, with Sharma Ji's own words and the original recording | Add a memo: upload, record or try a sample |
 |---|---|
 | ![Recipe page](docs/recipe.png) | ![Add a memo](docs/add.png) |
 
@@ -37,7 +37,7 @@ Everything runs on open-weight models, and you choose where the LLM runs with on
   tool-calling agent searches, scales and quotes the memos.
 - **Recipe cards**: title, servings, ingredient list with quantities exactly as spoken, numbered steps,
   and the storyteller's own tips.
-- **"In Grandpa's words"**: a verbatim quote of the personal story behind each dish (who taught it, when it
+- **"In Sharma Ji's words"**: a verbatim quote of the personal story behind each dish (who taught it, when it
   was made), shown next to an audio player with the original recording.
 - **Review & edit**: small models occasionally mishear, so every recipe can be checked against the
   recording and corrected before the book is shared.
@@ -105,7 +105,7 @@ The model backend is one setting (`app/llm.py`):
 - **"Ask the book" kitchen agent** (`app/kitchen.py`, `POST /api/ask`) is a chat page with the tools
   `search_recipes`, `list_recipes`, `get_recipe`, `scale_recipe` and `find_in_memo`. Ask "double the banana
   bread" and it finds the recipe and scales it. The arithmetic is exact because Python does it, not the
-  model. Ask "why real ghee?" and it quotes Grandpa's memo. Each tool call is shown as the agent makes it.
+  model. Ask "why real ghee?" and it quotes Sharma Ji's memo. Each tool call is shown as the agent makes it.
 
 ### Why the local / cloud split?
 

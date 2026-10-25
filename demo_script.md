@@ -45,7 +45,7 @@ steps, just him talking. Here's one."*
 - Ingredients: 1 cup water, 1 cup milk, 4 green cardamom pods, 1 inch ginger, 2 cloves, cinnamon (optional),
   2 tsp loose black tea (Assam), 2 tsp sugar.
 - Steps ending with "boil until it rises, take it off the flame, let it settle, repeat 3 times" → strain.
-- **In Grandpa's words**: *"I drank this every morning at the railway station for 40 years before work…
+- **In Sharma Ji's words**: *"I drank this every morning at the railway station for 40 years before work…
   he taught me the three times trick."*, with the audio player under it.
 
 ## Scene 3: the book (30 s)
@@ -54,7 +54,7 @@ steps, just him talking. Here's one."*
 2. Type **ghee** in search → only the Sunday dal remains, with "ghee" highlighted as a matched ingredient.
    Try **cardamom** → chai. Clear the search.
 3. Open **Sunday Dal** → scroll: quantities exactly as spoken ("a big pinch" of asafoetida, "4 whistles"),
-   Grandpa's tips, the quote about the day "your father was born". Press ▶ on the audio player.
+   Sharma Ji's tips, the quote about the day "your father was born". Press ▶ on the audio player.
 4. Expand **Original voice memo transcript** to show the raw ramble next to the clean card.
 5. Click **Print book** → cover, contents, one recipe per page → **Print / Save as PDF**. Show the PDF preview.
 
@@ -64,11 +64,11 @@ steps, just him talking. Here's one."*
    family copy… audio and processing never touched the cloud."*
 2. Click **Add a memo** → it explains processing happens at home. That's the design: the cloud only ever
    sees finished recipes the family chose to publish.
-3. Narration: *"New recipes are processed on Grandpa's computer, then a git push publishes them here."*
+3. Narration: *"New recipes are processed on Sharma Ji's computer, then a git push publishes them here."*
 
 ## Closing line
 
-*"Whisper and Qwen are open-weight, so Grandpa's voice never leaves home, there's no per-recording API bill,
+*"Whisper and Qwen are open-weight, so Sharma Ji's voice never leaves home, there's no per-recording API bill,
 and it'll still work in twenty years when the APIs are gone."*
 
 ## Troubleshooting
