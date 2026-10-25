@@ -1,0 +1,21 @@
+# Render Blueprint: deploys EchoBook's read-only recipe viewer.
+# Inference (faster-whisper + Ollama) runs on the family's own machine; the structured recipes
+# (data/recipes.json) and original recordings (data/audio/) are committed and served from here.
+services:
+  - type: web
+    name: echobook
+    runtime: python
+    plan: free
+    buildCommand: pip install -r requirements-web.txt
+    startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /healthz
+    autoDeploy: true
+    envVars:
+      - key: ECHOBOOK_MODE
+        value: viewer
+      - key: PYTHON_VERSION
+        value: 3.11.9
+      - key: ECHOBOOK_STORYTELLER
+        value: Grandpa
+      - key: ECHOBOOK_TITLE
+        value: Grandpa's Kitchen

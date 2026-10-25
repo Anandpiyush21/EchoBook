@@ -1,0 +1,8 @@
+.venv/
+__pycache__/
+*.pyc
+.env
+data/echobook.db
+data/*.tmp
+data/.transcript_cache.json
+.DS_Store

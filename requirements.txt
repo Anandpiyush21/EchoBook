@@ -1,0 +1,3 @@
+# Full local install: web app + on-device inference pipeline.
+-r requirements-web.txt
+faster-whisper>=1.1,<2

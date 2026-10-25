@@ -1,0 +1,2 @@
+# Only needed to regenerate the stand-in sample memos (scripts/make_sample_audio.py).
+piper-tts>=1.2
