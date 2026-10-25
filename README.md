@@ -1,6 +1,6 @@
 # EchoBook
 
-**Turn family voice memos into a living recipe book, entirely on your own computer.**
+**Turn family voice memos into a living recipe book, with open-weight models on your own computer (Ollama) or on Gemma 4.**
 
 *Made for Hacktoberfest, Kramer Community.*
 
@@ -51,9 +51,10 @@ Everything runs on open-weight models, and you choose where the LLM runs with on
 
 ```
                   ┌──────────────────────── family computer (offline-capable) ───────────────────────┐
- voice memo  ──►  │ 1. faster-whisper        2. Ollama + qwen2.5:7b        3. SQLite                 │
+ voice memo  ──►  │ 1. faster-whisper        2. Ollama (qwen2.5:7b)        3. SQLite                 │
  (.m4a/.wav)      │    open-weight Whisper ─►   JSON-schema-constrained ─►   recipes + transcript   │
-                  │    small.en, on-device      recipe extraction              + link to audio      │
+                  │    small.en, on-device      or Gemma 4 (Gemini API)        + link to audio      │
+                  │                             + fact-checker agent                                 │
                   │                                                              │                  │
                   │    FastAPI + single-page UI  (ECHOBOOK_MODE=local)            ▼                  │
                   │                                                    data/recipes.json + data/audio│
@@ -61,7 +62,7 @@ Everything runs on open-weight models, and you choose where the LLM runs with on
                                                                    git push      │  (finished recipes only)
                                                                                  ▼
                                                    Render: same FastAPI app, ECHOBOOK_MODE=viewer
-                                                   read-only browse / search / listen / print
+                                                   read-only browse / search / listen / print (+ Ask the book on Gemma)
 ```
 
 1. **Speech-to-text: [faster-whisper](https://github.com/SYSTRAN/faster-whisper)** runs OpenAI's
@@ -169,7 +170,7 @@ instances sleep when idle, so the first visit can take ~30 s to wake.)
 app/
   main.py          FastAPI routes (recipes, search, export, upload/sample processing, job status)
   transcribe.py    stage 1: faster-whisper speech-to-text
-  structure.py     stage 2: Ollama prompt + JSON schema + output cleaning / verbatim-quote check
+  structure.py     stage 2: LLM prompt + JSON schema + output cleaning / verbatim-quote check
   pipeline.py      background worker, per-stage job progress
   db.py            stage 3: SQLite store, mirrored to data/recipes.json
   export.py        Markdown export
