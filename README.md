@@ -157,6 +157,10 @@ app/
   pipeline.py      background worker, per-stage job progress
   db.py            stage 3: SQLite store, mirrored to data/recipes.json
   export.py        Markdown export
+  llm.py           model backend switch (Ollama or Gemma via the Gemini API)
+  agent.py         minimal tool-calling agent loop
+  factcheck.py     fact-checker agent: verifies ingredients against the transcript
+  kitchen.py       "Ask the book" agent: search, scale and quote recipes
   config.py        env-driven settings (.env supported)
 frontend/          index.html, app.js, style.css (single-page app, no build step)
 sample_audio/      three stand-in voice memos (see below)

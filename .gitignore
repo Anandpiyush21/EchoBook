@@ -6,3 +6,6 @@ data/echobook.db
 data/*.tmp
 data/.transcript_cache.json
 .DS_Store
+
+# Personal recordings uploaded through the app
+data/audio/recording-*
