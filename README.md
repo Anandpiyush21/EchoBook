@@ -156,10 +156,14 @@ libraries faster-whisper needs (`pip install nvidia-cublas-cu12 nvidia-cudnn-cu1
 
 ## Deploy the viewer on Render
 
+[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/Anandpiyush21/EchoBook)
+
 1. Push this repo to GitHub (the processed recipes in `data/` included).
-2. In Render: **New → Blueprint**, select the repo. `render.yaml` creates a free Python web service with
-   `ECHOBOOK_MODE=viewer`.
-3. Every push to `main` redeploys. New recipes processed at home show up after `git push`.
+2. Click the button above, or in Render choose **New → Blueprint** and select the repo. `render.yaml`
+   creates a free Python web service with `ECHOBOOK_MODE=viewer`.
+3. When Render asks for `GEMINI_API_KEY`, paste a free key from https://aistudio.google.com/apikey. This
+   turns on "Ask the book" on the hosted copy (Gemma 4). Leave it empty to deploy without the agent.
+4. Every push to `main` redeploys. New recipes processed at home show up after `git push`.
 
 The viewer installs only FastAPI and uvicorn, so builds take seconds and fit the free tier. (Free
 instances sleep when idle, so the first visit can take ~30 s to wake.)

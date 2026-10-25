@@ -1,6 +1,7 @@
 # Render Blueprint: deploys EchoBook's read-only recipe viewer.
-# Inference (faster-whisper + Ollama) runs on the family's own machine; the structured recipes
-# (data/recipes.json) and original recordings (data/audio/) are committed and served from here.
+# Voice memos are processed on the family's own machine; the structured recipes (data/recipes.json)
+# and original recordings (data/audio/) are committed and served from here. "Ask the book" runs on
+# Gemma 4 through the Gemini API; Render asks for GEMINI_API_KEY when the Blueprint is created.
 services:
   - type: web
     name: echobook
@@ -19,3 +20,9 @@ services:
         value: Sharma Ji
       - key: ECHOBOOK_TITLE
         value: Sharma Ji ki Rasoi
+      - key: LLM_PROVIDER
+        value: gemma
+      - key: GEMMA_MODEL
+        value: gemma-4-26b-a4b-it
+      - key: GEMINI_API_KEY
+        sync: false
