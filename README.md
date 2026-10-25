@@ -45,7 +45,16 @@ Everything runs on open-weight models, and you choose where the LLM runs with on
 - **Export**: download any recipe or the whole book as Markdown, or open the print layout (cover, table
   of contents, one recipe per page) and save it as a PDF.
 - **Shareable read-only copy** deployed on Render: relatives can browse the book and listen to the
-  recordings, while all processing stays at home.
+  recordings, while new memos are only ever processed at home.
+
+## What leaves your computer
+
+| | Ollama (default) | Gemma 4 (`LLM_PROVIDER=gemma`) |
+|---|---|---|
+| Audio recordings | stay on your computer | stay on your computer |
+| Speech-to-text (Whisper) | runs on your computer | runs on your computer |
+| Transcript text | stays on your computer | sent to Google's Gemini API |
+| Works with no internet | yes, once models are downloaded | no |
 
 ## How it works
 
@@ -71,8 +80,8 @@ Everything runs on open-weight models, and you choose where the LLM runs with on
    cardamom…). See `app/transcribe.py`.
 2. **Structuring: [Ollama](https://ollama.com) + `qwen2.5:7b-instruct`** (Apache-2.0, open weights), or
    **Gemma 4** (`gemma-4-26b-a4b-it`) through the Gemini API with `LLM_PROVIDER=gemma`. The
-   transcript is sent to the local model with a carefully tuned archivist prompt, and Ollama's
-   **structured outputs** constrain decoding to a JSON schema (title, servings, ingredients with
+   transcript is sent to the chosen model with a carefully tuned archivist prompt, and **structured
+   outputs** (Ollama's `format`, the Gemini API's `responseSchema`) constrain the reply to a JSON schema (title, servings, ingredients with
    quantity/item/note, steps, tips, story quote, tags), so the output always parses. The prompt forbids
    invented quantities, times and advice, and makes the model copy amounts exactly as spoken. After
    generation, the story quote is snapped back onto the closest real span of the transcript so the "in
@@ -109,12 +118,12 @@ The model backend is one setting (`app/llm.py`):
 
 ### Why the local / cloud split?
 
-GPU inference doesn't fit on Render's free tier, and it shouldn't run in the cloud anyway, because the
-point is that family recordings stay home. So the same codebase runs in two modes:
+Speech-to-text needs more compute than Render's free tier offers, and family recordings should stay
+home anyway. So the same codebase runs in two modes:
 
 | | `ECHOBOOK_MODE=local` (home) | `ECHOBOOK_MODE=viewer` (Render) |
 |---|---|---|
-| Upload & process memos | ✅ faster-whisper + Ollama | ❌ disabled (403) |
+| Upload & process memos | ✅ faster-whisper + Ollama or Gemma 4 | ❌ disabled (403) |
 | Browse, search, listen, export | ✅ | ✅ |
 | Ask the book (agent) | ✅ | ✅ when `LLM_PROVIDER=gemma` and `GEMINI_API_KEY` are set |
 | Dependencies | `requirements.txt` (includes faster-whisper) | `requirements-web.txt` (FastAPI only) |
@@ -125,7 +134,8 @@ auto-deploys the updated book.
 
 ## Run it locally
 
-Requirements: Python 3.10+, [Ollama](https://ollama.com/download). A GPU is optional: on a 12-core CPU a
+Requirements: Python 3.10+, and either [Ollama](https://ollama.com/download) or a free Gemini API key
+(see "Using Gemma 4" below). A GPU is optional: on a 12-core CPU a
 one-minute memo takes about 2 minutes end to end with the 7B model (~15 s to transcribe, the rest to
 structure), or about half that with `qwen2.5:3b-instruct`. On a GPU the whole pipeline takes seconds.
 If your machine has only a small GPU, set `OLLAMA_NUM_GPU=0`. A partial offload onto a weak GPU was 6x
